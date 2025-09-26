@@ -7,28 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Global Styles & Font */
+        /* Global Dark Mode Styles & Font */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Roboto', sans-serif; /* Applied Roboto font */
+            font-family: 'Roboto', sans-serif;
             flex-direction: column;
             text-align: center;
-            background-color: #f0f0f0; /* Light gray background for contrast */
-            color: #333;
+            
+            /* TRUE DARK MODE BACKGROUND */
+            background-color: #000; 
+            color: #fff; /* White text for everything */
         }
         
         /* Container and Text Styles */
         #prompt-container {
             display: none;
             padding: 30px 40px;
-            border: 1px solid #ccc;
+            border: 1px solid #333; /* Darker border for the container */
             border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            background-color: #111; /* Slightly lighter black for the container for depth */
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
             max-width: 400px;
         }
         h1 {
@@ -39,7 +41,7 @@
             font-weight: 700;
         }
         
-        /* Black and White Button Theme */
+        /* Black Button with White Outline (Slightly different than container color) */
         button {
             padding: 12px 24px;
             margin: 10px;
@@ -47,33 +49,17 @@
             font-weight: 700;
             cursor: pointer;
             
-            /* Black background, White text, White outline (border) */
+            /* Button Style: Black fill, White text, White outline */
             background-color: #000; 
             color: #fff;
-            border: 2px solid #fff; /* White outline (not visible on white background) */
+            border: 2px solid #fff; /* White outline */
             border-radius: 5px;
             transition: background-color 0.3s, opacity 0.3s, border-color 0.3s;
         }
         
         button:hover {
-            opacity: 0.9;
-            background-color: #333; /* Slightly lighter black on hover */
-            border-color: #000; /* Subtle change on hover */
-        }
-
-        /* Specific styles for the buttons to ensure the white border is visible */
-        .button-group {
-            border: 1px solid #000; /* Border around the entire group */
-            display: flex;
-            padding: 10px;
-            margin-top: 15px;
-            border-radius: 5px;
-            background-color: #fff; /* White background for the group */
-        }
-        .button-group button {
-            background-color: #000; 
-            color: #fff;
-            border: 1px solid #fff; /* White border for contrast against black button fill */
+            background-color: #333; /* Lighter black on hover */
+            border-color: #fff; /* Maintain white outline */
         }
 
     </style>
@@ -87,7 +73,7 @@
     <div id="prompt-container">
         <h1>Welcome! Which site version do you prefer?</h1>
         <p>We'll remember your choice for next time.</p>
-        <div class="button-group">
+        <div>
             <button onclick="setPreferenceAndRedirect('new')">Go to New Homepage</button>
             <button onclick="setPreferenceAndRedirect('old')">Go to Old Homepage</button>
         </div>
